@@ -17,7 +17,7 @@ routes.post("/", async (req, res) => {
         {
           // prod : price_1OL31AKww5u0tgAGCbuHDHBq
           // test : price_1OL2uDKww5u0tgAGMJvUrrDp
-          price: "price_1OL31AKww5u0tgAGCbuHDHBq", // Remplacez par votre identifiant de prix
+          price: "price_1OL2zHKww5u0tgAGH28zYNPl", // Remplacez par votre identifiant de prix
           quantity: 1,
         },
       ],
