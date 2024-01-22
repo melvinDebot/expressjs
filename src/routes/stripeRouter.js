@@ -15,9 +15,9 @@ routes.post("/", async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          // prod : price_1OL2zHKww5u0tgAGH28zYNPl
+          // prod : price_1ObRi1Kww5u0tgAGFdOaFMpE
           // test : price_1OL2uDKww5u0tgAGMJvUrrDp
-          price: "price_1OL2zHKww5u0tgAGH28zYNPl", // Remplacez par votre identifiant de prix
+          price: "price_1ObRi1Kww5u0tgAGFdOaFMpE", // Remplacez par votre identifiant de prix
           quantity: 1,
         },
       ],
