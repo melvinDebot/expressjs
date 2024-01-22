@@ -15,7 +15,7 @@ routes.post("/", async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          // prod : price_1OL31AKww5u0tgAGCbuHDHBq
+          // prod : price_1OL2zHKww5u0tgAGH28zYNPl
           // test : price_1OL2uDKww5u0tgAGMJvUrrDp
           price: "price_1OL2zHKww5u0tgAGH28zYNPl", // Remplacez par votre identifiant de prix
           quantity: 1,
@@ -27,10 +27,11 @@ routes.post("/", async (req, res) => {
       cancel_url: `${req.headers.origin}/cancel`,
     });
 
-    res.json({ sessionId: session.id });
+    res.json({ sessionId: session.id});
   } catch (error) {
     res.status(400).send({ error: { message: error.message } });
   }
 });
+
 
 export default routes;

@@ -5,6 +5,7 @@ import morgan from "morgan";
 import * as middleware from "./utils/middleware.js";
 import helloRoute from "./routes/helloRouter.js";
 import stripeRoute from "./routes/stripeRouter.js";
+import VerifPayment from "./routes/VerifPayment.js";
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.get("/", (req, res) => {
 
 app.use("/hello", helloRoute);
 app.use("/create-checkout-session", stripeRoute);
+app.use("/verify-payment", VerifPayment);
+
 
 // custom middleware
 app.use(middleware.unknownEndpoint);
