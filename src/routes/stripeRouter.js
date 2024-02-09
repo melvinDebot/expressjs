@@ -23,11 +23,17 @@ routes.post("/", async (req, res) => {
       ],
 
       mode: "subscription",
-      success_url: `${req.headers.origin}/success`,
-      cancel_url: `${req.headers.origin}/cancel`,
+      success_url:
+        req.headers.origin === undefined
+          ? "https://verse-app.netlify.app/successed"
+          : `${req.headers.origin}/success`,
+      cancel_url:
+        req.headers.origin === undefined
+          ? "https://verse-app.netlify.app/cancelled"
+          : `${req.headers.origin}/cancel`,
     });
 
-    res.json({ sessionId: session.id});
+    res.json({ sessionId: session.id, url : session.url, session: session });
   } catch (error) {
     res.status(400).send({ error: { message: error.message } });
   }
